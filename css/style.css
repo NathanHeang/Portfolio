@@ -26,7 +26,6 @@ body {
 }
 
 p {
-    padding: 2.5%;
     background-image: linear-gradient(#ff8c64, #fff7df);
     color: transparent;
     background-clip: text;
@@ -43,4 +42,5 @@ p {
 .box1{
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
+    padding: 2.5%;
 }
