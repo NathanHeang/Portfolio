@@ -1,8 +1,46 @@
-h1 {
-    font: bolder 64px Montserrat;
+* {
+    margin: 0;
+    padding: 0;
 }
+
+
+h1::before{
+    content: image("images/prismaticaEmblem.png");
+}
+
+h1 {
+    font: bolder 4em Montserrat;
+}
+
+hr {
+    width: 90%;
+    color: transparent;
+    background-clip: text;
+    margin: auto;
+}
+
 body {
     color: #f0d171;
-    background-color: #20073a;
-    font: bolder 24px "Odin Rounded";
+    background: radial-gradient(#20073a, #511043);
+    font: bolder 1em "Odin Rounded";
+}
+
+p {
+    padding: 2.5%;
+    background-image: linear-gradient(#ff8c64, #fff7df);
+    color: transparent;
+    background-clip: text;
+}
+
+.title{
+    padding-left: 2.5%;
+    padding-top: 0.625%;
+}
+.container{
+    width: 87.5%;
+    margin: auto;
+}
+.box1{
+    background: radial-gradient(#1f0629, #390d33);
+    border: .25em #ffe9a9 double;
 }
