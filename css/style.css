@@ -1,5 +1,8 @@
+h1 {
+    font: bolder 64px Montserrat;
+}
 body {
     color: #f0d171;
     background-color: #20073a;
-    font: bolder 24px Montserrat;
+    font: bolder 24px "Odin Rounded";
 }
