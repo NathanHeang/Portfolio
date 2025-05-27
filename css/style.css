@@ -21,8 +21,19 @@ hr {
 
 body {
     color: #f0d171;
-    background: radial-gradient(#20073a, #511043);
     font: bolder 1em "Odin Rounded";
+
+}
+body::before{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    width:400%;
+    height:200%;
+    background: radial-gradient(farthest-corner at top, #20073a, #511043);
+    animation: bgAnim 5s infinite alternate linear;
 }
 
 p {
@@ -43,4 +54,31 @@ p {
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
     padding: 2.5%;
+    height: 100%;
+}
+
+.box1:hover{
+    /*animation: boxOpen 2s forwards;*/
+    height: 150px;
+}
+
+
+@keyframes boxOpen {
+    from{
+        height: 100%;
+    }
+    to{
+        height: 150px;
+    }
+}
+@keyframes bgAnim {
+    from {
+    transform:translateX(-50%);
+  }
+  50% {
+    transform:scaleX(0.75) translateX(-50%)
+  }
+  to {
+    transform:translateX(-25%);
+  }
 }
