@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -20,20 +21,10 @@ hr {
 }
 
 body {
+    min-height: 100vh;
+    background: radial-gradient(#20073a, #511043);
     color: #f0d171;
     font: bolder 1em "Odin Rounded";
-
-}
-body::before{
-    content:"";
-    position:absolute;
-    z-index:-1;
-    top:0;
-    left:0;
-    width:400%;
-    height:200%;
-    background: radial-gradient(farthest-corner at top, #20073a, #511043);
-    animation: bgAnim 5s infinite alternate linear;
 }
 
 p {
@@ -54,31 +45,30 @@ p {
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
     padding: 2.5%;
-    height: 100%;
 }
 
-.box1:hover{
-    /*animation: boxOpen 2s forwards;*/
-    height: 150px;
+#cursor{
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    border: 5px solid #f0d171;
+
+    transform: translate(-1px, 5px) rotate(0deg) scale(0);
+    transition: transform .125s;
+
+    pointer-events: none;
+    animation: cursorAnim 2.5s linear infinite;
 }
 
+body:hover #cursor{
+    transform: translate(-1px, 5px) rotate(405deg) scale(1);
+}
 
-@keyframes boxOpen {
-    from{
-        height: 100%;
+@keyframes cursorAnim {
+    0% {
+        filter: drop-shadow(0 0 5px #ffe9a9) drop-shadow(0 0 15px #ffe9a9) drop-shadow(0 0 30px #ffe9a9) hue-rotate(0deg)
     }
-    to{
-        height: 150px;
+    100% {
+        filter: drop-shadow(0 0 5px #ffe9a9) drop-shadow(0 0 15px #ffe9a9) drop-shadow(0 0 30px #ffe9a9) hue-rotate(360deg)
     }
-}
-@keyframes bgAnim {
-    from {
-    transform:translateX(-50%);
-  }
-  50% {
-    transform:scaleX(0.75) translateX(-50%)
-  }
-  to {
-    transform:translateX(-25%);
-  }
 }
