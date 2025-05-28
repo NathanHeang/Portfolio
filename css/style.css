@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+html{
+    cursor:none;
+}
 
 h1::before{
     content: image("images/prismaticaEmblem.png");
@@ -30,6 +33,7 @@ body {
 p {
     background-image: linear-gradient(#ff8c64, #fff7df);
     color: transparent;
+    text-overflow: clip;
     background-clip: text;
 }
 
@@ -45,30 +49,44 @@ p {
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
     padding: 2.5%;
+    height: 10em;
+    transition: height .5s;
+}
+
+.box1:hover{
+    height: 20em;
 }
 
 #cursor{
-    position: fixed;
-    width: 25px;
-    height: 25px;
-    border: 5px solid #f0d171;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 4px solid #f0d171;
 
-    transform: translate(-1px, 5px) rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
     transition: transform .125s;
 
     pointer-events: none;
-    animation: cursorAnim 2.5s linear infinite;
+    animation: rainbow .5s linear infinite, spin 1s linear infinite;
 }
 
 body:hover #cursor{
-    transform: translate(-1px, 5px) rotate(405deg) scale(1);
+    transform: rotate(360deg) scale(1);
 }
 
-@keyframes cursorAnim {
+@keyframes  spin {
     0% {
-        filter: drop-shadow(0 0 5px #ffe9a9) drop-shadow(0 0 15px #ffe9a9) drop-shadow(0 0 30px #ffe9a9) hue-rotate(0deg)
+        rotate: 0deg;
     }
     100% {
-        filter: drop-shadow(0 0 5px #ffe9a9) drop-shadow(0 0 15px #ffe9a9) drop-shadow(0 0 30px #ffe9a9) hue-rotate(360deg)
+        rotate: 360deg;
+    }
+}
+@keyframes rainbow {
+    0% {
+        filter: drop-shadow(0 0 5px #ffe9a9) drop-shadow(0 0 15px #ffe9a9) drop-shadow(0 0 30px #ffe9a9) hue-rotate(0deg);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px #ffe9a9) drop-shadow(0 0 15px #ffe9a9) drop-shadow(0 0 30px #ffe9a9) hue-rotate(360deg);
     }
 }
