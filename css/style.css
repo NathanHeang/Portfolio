@@ -32,11 +32,25 @@ h1 {
     font: bolder 4em Montserrat;
 }
 
+h2 {
+    font: bold 2em Montserrat;
+}
+
 hr {
     width: 90%;
     color: transparent;
     background-clip: text;
     margin: auto;
+}
+
+img {
+    width: 12.5%;
+    height: auto;
+    transition: all ease, 2s;
+    &.box1Image{
+        opacity: 0;
+        display: none;
+    }
 }
 
 body {
@@ -52,13 +66,15 @@ p {
 
     color: transparent;
 
-    white-space: nowrap;
-    overflow-y: clip;
-    text-overflow: ellipsis;
-
-    height: 2em;
-
     transition: height ease .75s;
+    &.box1Paragraph{
+        white-space: nowrap;
+        overflow-y: clip;
+        text-overflow: ellipsis;
+
+        height: 2em;
+    }
+    will-change: transform;
 }
 
 .box1{
@@ -67,10 +83,14 @@ p {
     padding: 2.5%;
 
     &:hover, &:focus {
-        p {
+        .box1Paragraph {
             white-space: unset;
             max-height: unset;
             height: max-content;
+        }
+        .box1Image {
+            display: inline;
+            opacity: 1;
         }
     }
 }
@@ -91,6 +111,7 @@ p {
 
     pointer-events: none;
     animation: rainbow .5s linear infinite, spin 1s linear infinite;
+    will-change: transform;
 }
 
 body:hover {
