@@ -1,3 +1,7 @@
+:root {
+    interpolate-size: allow-keywords;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +10,18 @@
 
 html{
     cursor:none;
+}
+
+.headerBox{
+    padding-left: 2.5%;
+    padding-top: 0.625%;
+}
+
+.header {
+
+}
+.subheader {
+    letter-spacing: 1em;
 }
 
 h1::before{
@@ -32,29 +48,36 @@ body {
 
 p {
     background-image: linear-gradient(#ff8c64, #fff7df);
-    color: transparent;
-    text-overflow: clip;
     background-clip: text;
+
+    color: transparent;
+
+    white-space: nowrap;
+    overflow-y: clip;
+    text-overflow: ellipsis;
+
+    height: 2em;
+
+    transition: height ease .75s;
 }
 
-.title{
-    padding-left: 2.5%;
-    padding-top: 0.625%;
-}
-.container{
-    width: 87.5%;
-    margin: auto;
-}
 .box1{
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
     padding: 2.5%;
-    height: 10em;
-    transition: height .5s;
+
+    &:hover, &:focus {
+        p {
+            white-space: unset;
+            max-height: unset;
+            height: max-content;
+        }
+    }
 }
 
-.box1:hover{
-    height: 20em;
+.container{
+    width: 87.5%;
+    margin: auto;
 }
 
 #cursor{
@@ -70,8 +93,10 @@ p {
     animation: rainbow .5s linear infinite, spin 1s linear infinite;
 }
 
-body:hover #cursor{
-    transform: rotate(360deg) scale(1);
+body:hover {
+    #cursor {
+        transform: rotate(360deg) scale(1);
+    }
 }
 
 @keyframes  spin {
