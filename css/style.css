@@ -12,22 +12,6 @@ html{
     cursor:none;
 }
 
-.headerBox{
-    padding-left: 2.5%;
-    padding-top: 0.625%;
-}
-
-.header {
-
-}
-.subheader {
-    letter-spacing: 1em;
-}
-
-h1::before{
-    content: image("images/prismaticaEmblem.png");
-}
-
 h1 {
     font: bolder 4em Montserrat;
 }
@@ -43,54 +27,78 @@ hr {
     margin: auto;
 }
 
-img {
-    width: 12.5%;
-    height: auto;
-    transition: all ease, 2s;
-    &.box1Image{
-        opacity: 0;
-        display: none;
-    }
-}
-
-body {
+main {
     min-height: 100vh;
     background: radial-gradient(#20073a, #511043);
     color: #f0d171;
     font: bolder 1em "Odin Rounded";
+    &:hover {
+        #cursor {
+            transform: rotate(360deg) scale(1);
+        }
+    }
+}
+
+img {
+    width: 12.5%;
+    height: auto;
 }
 
 p {
     background-image: linear-gradient(#ff8c64, #fff7df);
     background-clip: text;
-
     color: transparent;
+}
 
-    transition: height ease .75s;
-    &.box1Paragraph{
+a{
+    animation: rainbow 5s linear infinite;
+    &::before, &:after{
+        content: "\02606";
+    }
+}
+
+.headerBox{
+    padding-left: 2.5%;
+    padding-top: 0.625%;
+}
+
+.subheader {
+    letter-spacing: 1em;
+}
+
+.box1Items{
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+
+    transition: all ease-in 1.25s;
+
+    &p{
         white-space: nowrap;
         overflow-y: clip;
         text-overflow: ellipsis;
-
         height: 2em;
     }
-    will-change: transform;
 }
 
 .box1{
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
-    padding: 2.5%;
+    padding: .75%;
 
     &:hover, &:focus {
-        .box1Paragraph {
-            white-space: unset;
-            max-height: unset;
-            height: max-content;
-        }
-        .box1Image {
-            display: inline;
+        .box1Items {
+            visibility: visible;
+            max-height: 1000px;
             opacity: 1;
+
+            transition: all ease-out 1.25s;
+
+            &p {
+                white-space: unset;
+                max-height: unset;
+                height: max-content;
+            }
         }
     }
 }
@@ -111,15 +119,7 @@ p {
 
     pointer-events: none;
     animation: rainbow .5s linear infinite, spin 1s linear infinite;
-    will-change: transform;
 }
-
-body:hover {
-    #cursor {
-        transform: rotate(360deg) scale(1);
-    }
-}
-
 @keyframes  spin {
     0% {
         rotate: 0deg;
