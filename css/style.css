@@ -12,19 +12,23 @@ html{
     cursor:none;
 }
 
+hr {
+    border: 0;
+    height: 5px;
+    width: 90%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 233, 169, 0.75), rgba(0, 0, 0, 0));
+    margin: auto;
+}
+
 h1 {
     font: bolder 4em Montserrat;
+    &+h2{
+        letter-spacing: 1em;
+    }
 }
 
 h2 {
     font: bold 2em Montserrat;
-}
-
-hr {
-    width: 90%;
-    color: transparent;
-    background-clip: text;
-    margin: auto;
 }
 
 body{
@@ -39,14 +43,14 @@ body{
     }
 }
 
+header{
+    padding-left: 2.5%;
+    padding-top: 0.625%;
+}
+
 main {
     width: 87.5%;
     margin: auto;
-}
-
-img {
-    width: 12.5%;
-    height: auto;
 }
 
 p {
@@ -62,24 +66,9 @@ a{
     }
 }
 
-header{
-    padding-left: 2.5%;
-    padding-top: 0.625%;
-}
-
-.hoverboxItems{
-    visibility: hidden;
-    max-height: 0;
-    opacity: 0;
-
-    transition: all ease-in 1.25s;
-
-    &p{
-        white-space: nowrap;
-        overflow-y: clip;
-        text-overflow: ellipsis;
-        height: 2em;
-    }
+img {
+    width: 12.5%;
+    height: auto;
 }
 
 .hoverbox{
@@ -104,6 +93,21 @@ header{
     }
 }
 
+.hoverboxItems{
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+
+    transition: all ease-in 1.25s;
+
+    &p{
+        white-space: nowrap;
+        overflow-y: clip;
+        text-overflow: ellipsis;
+        height: 2em;
+    }
+}
+
 #cursor{
     position: absolute;
     width: 24px;
@@ -116,7 +120,7 @@ header{
     pointer-events: none;
     animation: rainbow .5s linear infinite, spin 1s linear infinite;
 }
-@keyframes  spin {
+@keyframes spin {
     0% {
         rotate: 0deg;
     }
