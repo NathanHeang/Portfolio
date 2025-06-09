@@ -27,7 +27,7 @@ hr {
     margin: auto;
 }
 
-main {
+body{
     min-height: 100vh;
     background: radial-gradient(#20073a, #511043);
     color: #f0d171;
@@ -37,6 +37,11 @@ main {
             transform: rotate(360deg) scale(1);
         }
     }
+}
+
+main {
+    width: 87.5%;
+    margin: auto;
 }
 
 img {
@@ -57,16 +62,12 @@ a{
     }
 }
 
-.headerBox{
+header{
     padding-left: 2.5%;
     padding-top: 0.625%;
 }
 
-.subheader {
-    letter-spacing: 1em;
-}
-
-.box1Items{
+.hoverboxItems{
     visibility: hidden;
     max-height: 0;
     opacity: 0;
@@ -81,18 +82,18 @@ a{
     }
 }
 
-.box1{
+.hoverbox{
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
     padding: .75%;
 
     &:hover, &:focus {
-        .box1Items {
+        .hoverboxItems {
             visibility: visible;
             max-height: 1000px;
             opacity: 1;
 
-            transition: all ease-out 1.25s;
+            transition: all ease-out .25s;
 
             &p {
                 white-space: unset;
@@ -101,11 +102,6 @@ a{
             }
         }
     }
-}
-
-.container{
-    width: 87.5%;
-    margin: auto;
 }
 
 #cursor{
