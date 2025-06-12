@@ -8,8 +8,8 @@
     box-sizing: border-box;
 }
 
-html{
-    cursor:none;
+html {
+    cursor: none;
 }
 
 hr {
@@ -22,7 +22,7 @@ hr {
 
 h1 {
     font: bolder 4em Montserrat;
-    &+h2{
+    & + h2 {
         letter-spacing: 1em;
     }
 }
@@ -31,7 +31,7 @@ h2 {
     font: bold 2em Montserrat;
 }
 
-body{
+body {
     min-height: 100vh;
     background: linear-gradient(-45deg, #ee7752, #a1298c, #1f0629, #390d33);
     background-size: 400% 400%;
@@ -46,7 +46,7 @@ body{
     }
 }
 
-header{
+header {
     padding-left: 2.5%;
     padding-top: 0.625%;
 }
@@ -62,9 +62,9 @@ p {
     color: transparent;
 }
 
-a{
+a {
     animation: rainbow 10s linear infinite;
-    &::before, &:after{
+    &::before, &:after {
         content: "\02606";
     }
 }
@@ -74,19 +74,19 @@ img {
     height: auto;
 }
 
-.hoverbox{
+.hoverbox {
     background: radial-gradient(#1f0629, #390d33);
     border: .25em #ffe9a9 double;
     padding: .75%;
 
-    h2{
+    h2 {
         text-decoration: underline .05em rgba(0, 0, 0, 0);
         text-underline-offset: .2em;
         transition: all .25s ease;
     }
 
     &:hover, &:focus {
-        h2{
+        h2 {
             text-decoration-color: rgba(255, 255, 255, .5);
             text-underline-offset: .04em;
         }
@@ -96,7 +96,7 @@ img {
             opacity: 1;
 
             transition: all ease-out .25s;
-            &p {
+            & p {
                 white-space: unset;
                 max-height: unset;
                 height: max-content;
@@ -105,14 +105,14 @@ img {
     }
 }
 
-.hoverboxItems{
+.hoverboxItems {
     visibility: hidden;
     max-height: 0;
     opacity: 0;
 
     transition: all ease-in 1.25s;
 
-    &p{
+    & p {
         white-space: nowrap;
         overflow-y: clip;
         text-overflow: ellipsis;
@@ -120,7 +120,7 @@ img {
     }
 }
 
-#cursor{
+#cursor {
     position: absolute;
     width: 24px;
     height: 24px;
@@ -149,15 +149,15 @@ img {
     }
 }
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
 @keyframes rainbow {
     0% {
